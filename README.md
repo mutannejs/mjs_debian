@@ -87,6 +87,7 @@ Em `Use as` deve ser escolhido o tipo da partição, recomendado usar `ext4 jour
 Para setar onde a partição será montada deve-se alterar a informação em `Mount point`. A partição principal do sistema deve ser setada como `/`, a partição de sistema EFI e a SWAP não possuem essa opção. Pode-se setar uma partição como `/home` caso queira usar a /home separada da raiz, e para usar também outras pastas separadas basta fazer o mesmo em outra partição.
 
 No fim dessa seção (**Instalando**), há exemplos tanto do particionamento guiado, quanto manual.
+
 12. Terminando o particionamento a instalação da base do sistema base é iniciada.
 13. Ao terminar de instalar a base do sistema é necessário configurar o gerenciador de pacotes. Para isso deve-se informar o país em que você mora e o espelho que deseja usar, ao escolher `Brasil` por padrão é recomendado usar o espelho `deb.debian.org`.
 14. Informe o proxy usado, caso não use apenas deixe em branco e prossiga.
