@@ -92,7 +92,7 @@ No fim dessa seção (**Instalando**), há exemplos tanto do particionamento gui
 19. Pronto, seu Debian foi instalado.
 20. Para usar seu novo sistema, basta clicar em `Continue` e retirar o pendrive (ou alterar a ordem de boot para iniciar primeiro o HD) antes da máquina ligar.
 
-**Exemplos** **particionamento**
+## Exemplos de particionamento
 
 Nos exemplos vamos considerar um disco de aproximadamente 20 GB, onde já existe duas partições, uma com 500 MB (a partição de sistema EFI), e outra com 4.5 GB (que não queremos mexer). Esse é um ambiente semelhante a quando já temos um sistema operacional instalado na máquina e queremos fazer um dual boot. Após escolhermos a zona horária cairemos na seguinte tela:
 
