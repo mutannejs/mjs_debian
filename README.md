@@ -8,7 +8,7 @@ Este é um passo a passo da instalação e da pós-instalação do Debian 11 que
  errada ou que possa ser melhorada, gostaria de receber seu feedback e saber
  o que melhorar. Desde já agradeço.
 
-## Instalação
+## [Instalação](https://github.com/mutannejs/mjs_debian/tree/master/instalacao)
 Possui os passos feitos para instalar o Debian em minha máquina. É discutido:
 
 - [**Baixando o arquivo ISO**](https://github.com/mutannejs/mjs_debian/tree/master/instalacao#baixando-o-arquivo-iso) : qual iso baixar;
@@ -17,7 +17,7 @@ Possui os passos feitos para instalar o Debian em minha máquina. É discutido:
 - [**Instalando**](https://github.com/mutannejs/mjs_debian/tree/master/instalacao#instalando) : instalação do Debian usando modo gráfico;
 - [**Exemplos de particionamento**](https://github.com/mutannejs/mjs_debian/tree/master/instalacao#exemplos-de-particionamento) : exemplos de particionamento feito usando o instalador do Debian, manual e guiado.
 
-## Configuração
+## [Configuração](https://github.com/mutannejs/mjs_debian/tree/master/configuracao)
 Possui algumas configurações feitas no sistema antes de instalar novos programas. É discutido:
 
 - [**GRUB**](https://github.com/mutannejs/mjs_debian/tree/master/configuracao#grub) : como aumentar o tempo de espera da tela de escolha do sistema operacional a ser inicializado;
