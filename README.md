@@ -42,7 +42,7 @@ Mostra os primeiros programas e pacotes instalados.
 - [**Conky**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#conky) : monitor de sistema na área de trabalho;
 - [**Desenvolvimento**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#desenvolvimento) : ferramentas usadas para programar
 	- [**Build-essential**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#build-essential) : necessário para compilar códigos feitos em C e executar arquivos makefile;
-	- [**Openjdk-17-jdk**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#opnjdk-17-jdk) : necessário para programar usando Java e executar programas feitos usando essa linguagem;
+	- [**Openjdk-17-jdk**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#openjdk-17-jdk) : necessário para programar usando Java e executar programas feitos usando essa linguagem;
 	- [**Git**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#git) : programa de versionamento muito utilizado por desenvolvedores;
 	- [**Geany**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#geany) : IDE leve e simples;
 - [**Mpv**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#mpv) : instalar o mpv Media Player no lugar do Parole;
