@@ -31,7 +31,7 @@ Possui algumas configurações feitas no sistema antes de instalar novos program
 - [**Alias**](https://github.com/mutannejs/mjs_debian/tree/master/configuracao#alias) : como criar atalhos para comandos usados no terminal.
 
 ## [Aplicativos](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos)
-Mostra os primeiros programas e pacotes e instalados.
+Mostra os primeiros programas e pacotes instalados.
 
 É discutido:
 

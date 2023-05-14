@@ -76,12 +76,18 @@ Pronto, devemos salvar e sair. Como própria recomendação da ferramenta, após
 - Para entender melhor (ou se aprofundar no assunto) pode-se consultar o seguinte manual de **Como usar o APT:**
 [https://www.debian.org/doc/manuals/apt-howto/index.pt-br.html](https://www.debian.org/doc/manuals/apt-howto/index.pt-br.html)
 - comandos do apt comentados:
-**apt update**: atualiza a lista de pacotes;
-**apt list --upgradable**: lista os pacotes que podem ser atualizados;
-**apt upgrade**: instala atualizações disponíveis para os programas presentes no sistema;
-**apt search**: pesquisa pacotes com o nome ou descrição que possuam a palavra informada;
-**apt install**: instala um novo pacote;
-**apt edit-sources**: abre o arquivo /etc/apt/sources.list para edição.
+
+	**apt update**: atualiza a lista de pacotes;
+
+	**apt list --upgradable**: lista os pacotes que podem ser atualizados;
+
+	**apt upgrade**: instala atualizações disponíveis para os programas presentes no sistema;
+
+	**apt search**: pesquisa pacotes com o nome ou descrição que possuam a palavra informada;
+
+	**apt install**: instala um novo pacote;
+
+	**apt edit-sources**: abre o arquivo /etc/apt/sources.list para edição.
 
 ## Tlp
 
