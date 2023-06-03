@@ -1,55 +1,118 @@
 # mjs_debian
-Este é um passo a passo da instalação e da pós-instalação do Debian 11 que
- fiz em minha máquina. Para cada escolha (ou a maioria), vou dar uma explicação
- do porquê fiz ela, além de tentar dar uma explicação para os comandos usados,
- configurações e apresentar sobre os programas instalados. É importante
- ressaltar que estou passando a diante o que eu aprendi, talvez algo não
- esteja correto ou tão bem explicado, e caso identificado alguma informação
- errada ou que possa ser melhorada, gostaria de receber seu feedback e saber
- o que melhorar. Desde já agradeço.
 
-## [Instalação](https://github.com/mutannejs/mjs_debian/tree/master/instalacao)
+Este é um passo a passo da instalação e da pós-instalação do Debian 11
+ que fiz em minha máquina. Para cada escolha (ou a maioria), vou dar uma
+ explicação do porquê fiz ela, além de tentar dar uma explicação para os
+ comandos usados, configurações e apresentar sobre os programas
+ instalados. É importante ressaltar que estou passando a diante o que eu
+ aprendi, talvez algo não esteja correto ou tão bem explicado, e caso
+ identificado alguma informação errada ou que possa ser melhorada,
+ gostaria de receber seu feedback e saber o que melhorar. Desde já
+ agradeço.
+
+Esse projeto foi iniciado dia 25 de abril de 2023.
+
+---
+
+## Últimas mudanças
+
+Na seção **Configuração** foi adicionado o tópico **Touchpad**;
+
+Na seção **Aplicativos** foi adicionado os tópicos **Trash-cli**,
+ **Testdisk e Timeshift** e o tópico **Firefox** foi modificado.
+
+---
+
+## [Instalação](./instalacao)
+
 Possui os passos feitos para instalar o Debian em minha máquina.
 
 É discutido:
 
-- [**Baixando o arquivo ISO**](https://github.com/mutannejs/mjs_debian/tree/master/instalacao#baixando-o-arquivo-iso) : qual iso baixar;
-- [**Gravando uma mídia**](https://github.com/mutannejs/mjs_debian/tree/master/instalacao#gravando-uma-m%C3%ADdia) : como usar o BalenaEtcher para gravar um pendrive bootável;
-- [**Mudando a ordem de boot**](https://github.com/mutannejs/mjs_debian/tree/master/instalacao#mudando-a-ordem-de-boot) : como fazer o computador ligar no istalador do debian;
-- [**Instalando**](https://github.com/mutannejs/mjs_debian/tree/master/instalacao#instalando) : instalação do Debian usando modo gráfico;
-- [**Exemplos de particionamento**](https://github.com/mutannejs/mjs_debian/tree/master/instalacao#exemplos-de-particionamento) : exemplos de particionamento feito usando o instalador do Debian, manual e guiado.
+- **Baixando o arquivo ISO** : qual iso baixar;
 
-## [Configuração](https://github.com/mutannejs/mjs_debian/tree/master/configuracao)
-Possui algumas configurações feitas no sistema antes de instalar novos programas.
+- **Gravando uma mídia** : como usar o BalenaEtcher para gravar um
+ pendrive bootável;
+
+- **Mudando a ordem de boot** : como fazer o computador ligar no
+ istalador do debian;
+
+- **Instalando** : instalação do Debian usando modo gráfico;
+
+- **Exemplos de particionamento** : exemplos de particionamento feito
+ usando o instalador do Debian, manual e guiado.
+
+---
+
+## [Configuração](./configuracao)
+
+Possui algumas configurações feitas no sistema antes de instalar novos
+ programas.
 
 É discutido:
 
-- [**GRUB**](https://github.com/mutannejs/mjs_debian/tree/master/configuracao#grub) : como aumentar o tempo de espera da tela de escolha do sistema operacional a ser inicializado;
-- [**Lightdm**](https://github.com/mutannejs/mjs_debian/tree/master/configuracao#lightdm) : como exibir uma lista e usuários na tela de login;
-- [**Sudo**](https://github.com/mutannejs/mjs_debian/tree/master/configuracao#sudo) : como permitir o usuário usar o comando sudo;
-- [**Fstab**](https://github.com/mutannejs/mjs_debian/tree/master/configuracao#fstab) : como montar uma partição automaticamente no boot do sistema;
-- [**Alias**](https://github.com/mutannejs/mjs_debian/tree/master/configuracao#alias) : como criar atalhos para comandos usados no terminal.
+- **Touchpad** : como ativar clique tocando no touchpad;
 
-## [Aplicativos](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos)
+- **GRUB** : como aumentar o tempo de espera da tela de escolha do
+ sistema operacional a ser inicializado;
+
+- **Lightdm** : como exibir uma lista e usuários na tela de login;
+
+- **Sudo** : como permitir o usuário usar o comando sudo;
+
+- **Fstab** : como montar uma partição automaticamente no boot do
+ sistema;
+
+- **Alias** : como criar atalhos para comandos usados no terminal.
+
+---
+
+## [Aplicativos](./aplicativos)
+
 Mostra os primeiros programas e pacotes instalados.
 
 É discutido:
 
-- [**Apt e netselect**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#apt-e-netselect) : como usar o gerenciador de pacotes do Debian e escolher o espelho mais adequado para sua máquina;
-- [**Tlp**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#tlp) : usado para economizar bateria no notebook;
-- [**Transmission**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#transmission) : leve e simples cliente de BitTorrent;
-- [**Blueman**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#blueman) : gerenciador de Bluetooth com interface gráfica;
-- [**Conky**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#conky) : monitor de sistema na área de trabalho;
-- [**Desenvolvimento**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#desenvolvimento) : ferramentas usadas para programar
-	- [**Build-essential**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#build-essential) : necessário para compilar códigos feitos em C e executar arquivos makefile;
-	- [**Openjdk-17-jdk**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#openjdk-17-jdk) : necessário para programar usando Java e executar programas feitos usando essa linguagem;
-	- [**Git**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#git) : programa de versionamento muito utilizado por desenvolvedores;
-	- [**Geany**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#geany) : IDE leve e simples;
-- [**Mpv**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#mpv) : instalar o mpv Media Player no lugar do Parole;
-- [**Firefox**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#firefox) : instalando a versão padrão no lugar da ESR;
-- [**LibreOffice**](https://github.com/mutannejs/mjs_debian/tree/master/aplicativos#libreoffice) : desinstalar ou adicionar suporte a pt-BR;
+- **Apt e netselect** : como usar o gerenciador de pacotes do Debian e
+ escolher o espelho mais adequado para sua máquina;
+
+- **Tlp** : usado para economizar bateria no notebook;
+
+- **Transmission** : leve e simples cliente de BitTorrent;
+
+- **Blueman** : gerenciador de Bluetooth com interface gráfica;
+
+- **Conky** : monitor de sistema na área de trabalho;
+
+- **Trash-cli** : usado para manipular a lixeira do sistema pela linha
+ de comando;
+
+- **Desenvolvimento** : ferramentas usadas para programar
+
+    - **Build-essential** : necessário para compilar códigos feitos em C
+     e executar arquivos makefile;
+
+    - **Openjdk-17-jdk** : necessário para programar usando Java e
+     executar programas feitos usando essa linguagem;
+
+    - **Git** : programa de versionamento muito utilizado por
+     desenvolvedores;
+
+    - **Geany** : IDE leve e simples;
+
+- **Mpv** : instalar o mpv Media Player no lugar do Parole;
+
+- **LibreOffice** : desinstalar ou adicionar suporte a pt-BR;
+
+- **Firefox** : instalando a versão padrão no lugar da ESR;
+
+- **Testdisk e Timeshift** : aplicativos para recuperar arquivos
+ excluídos e criar snapshot’s do sistema;
+
+---
 
 ## Ferramentas Usadas
+
 **Notion** - para escrever esse documento:
 
 [https://www.notion.so/](https://www.notion.so/)
@@ -103,3 +166,19 @@ Mostra os primeiros programas e pacotes instalados.
 **Hierarquia de Diretórios no Linux [Guia Básico]**
 
 [https://www.certificacaolinux.com.br/diretorios-e-arquivos/](https://www.certificacaolinux.com.br/diretorios-e-arquivos/)
+
+**DesktopEnvironment**
+
+[https://wiki.debian.org/pt_BR/DesktopEnvironment](https://wiki.debian.org/pt_BR/DesktopEnvironment)
+
+**GNU/Linux e lixeiras (Lixeira em outras partições, etc.)**
+
+[https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/](https://felipehw.github.io/2018/05/09/habilitando-a-lixeira-em-outras-particoes/)
+
+**Como recuperar arquivos excluídos no Linux – Ubuntu/Debian**
+
+[https://marquesfernandes.com/tecnologia/como-recuperar-arquivos-excluidos-no-linux-ubuntu-debian/](https://marquesfernandes.com/tecnologia/como-recuperar-arquivos-excluidos-no-linux-ubuntu-debian/)
+
+**[HowTo] Mostrar / ocultar aplicativos em uma área de trabalho específica**
+
+[https://blog.desdelinux.net/pt/howto-mostrar-ocultar-aplicaciones-en-un-escritorio-especifico/](https://blog.desdelinux.net/pt/howto-mostrar-ocultar-aplicaciones-en-un-escritorio-especifico/)

@@ -8,7 +8,7 @@ Antes de tudo é necessário estar com o terminal aberto e logado com root, ou u
 
 Com o terminal aberto, vamos rodar o primeiro comando:
 
-```
+```bash
 apt update
 ```
 
@@ -16,7 +16,7 @@ apt update
 
 O APT possui um banco de dados (listas de pacotes presentes nos repositório informados no arquivo `/etc/apt/sources.list`) para gerenciar os pacotes que estão instalados na máquina, e quais são necessários para instalar um pacote em específico. O comando `apt update` atualiza essa lista de pacotes, necessário para encontrar novos pacotes e saber se há atualizações existentes para os já presentes no sistema. Ao usar o comando veremos uma saída semelhante a:
 
-![apt_e_netselect_01.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/apt_e_netselect_01.png)
+![aplicativos_01.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/aplicativos_01.png)
 
 No lugar de `All packages are up to date.` poderíamos ter outra saída informando quantos pacotes poderiam ser atualizados, e uma sugestão de comando para ver quais são esses pacotes:
 
@@ -29,37 +29,37 @@ O netselect é usado para verificar qual espelho do repositório Debian é melho
 
 Antes de instalar o programa, podemos pesquisá-lo usando o apt, com o comando `apt search netselect`, esse comando pesquisa por pacotes com o nome semelhantes a netselect, ou que tenha essa palavra em sua descrição:
 
-![apt_e_netselect_02.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/apt_e_netselect_02.png)
+![apt_e_netselect_02.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/apt_e_netselect_02.png)
 
 Como pode-se ver na saída do comando, temos os dois programas:
 
 - **netselect**: verifica quais dos espelhos passados é mais eficiente. O espelhos localizados no Brasil podem ser encontrados em: [https://www.debian.org/mirror/mirrors_full#BR](https://www.debian.org/mirror/mirrors_full#BR)
 
-```
+```bash
 netselect debian.pop-sc.rnp.br mirror.uepg.br debian.c3sl.ufpr.br alcateia.ufscar.br ftp.br.debian.org
 ```
 
-![apt_e_netselect_03.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/apt_e_netselect_03.png)
+![apt_e_netselect_03.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/apt_e_netselect_03.png)
 
 - **netselect-apt**: cria um arquivo sources.list com o espelho mais eficiente. O arquivo será mais simples do que o já presente no sistema, mas o comando também mostra os 10 servidores mais rápidos para sua máquina e recomenda o primeiro deles. Na imagem, o repositório que queremos está com fundo branco:
 
-![apt_e_netselect_04.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/apt_e_netselect_04.png)
+![apt_e_netselect_04.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/apt_e_netselect_04.png)
 
 Fica a sua escolha qual instalar, mas o usado será *netselect-apt*, pela facilidade de usá-lo, sem precisar saber o nome dos espelhos.
 
 O comando para instalar um pacote é `apt install`, onde deve-se informar após a palavra install o nome do pacote (ou pacotes) que deseja-se instalar, logo, para instalar o netselect-apt, basta usar:
 
-```
+```bash
 apt install netselect-apt
 ```
 
-![apt_e_netselect_05.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/apt_e_netselect_05.png)
+![apt_e_netselect_05.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/apt_e_netselect_05.png)
 
 Ao usar o comando apt install é informado quais pacotes adicionais serão instalados (aleḿ do netselect-apt), pacotes sugeridos para se instalar e quais de fato serão instalados (contando os adicionais e o netselect-apt). Também é requisitado informar se deve-se continuar com a instalação deles ou não, por padrão é selecionado instalar (por isso o `Y` em maiúsculo), então basta teclar enter para continuar, mas também é possível teclar `n` e depois enter para cancelar sua instalação.
 
 Com o nome do repositório em mãos, vamos adicioná-lo no arquivo /etc/apt/sources.list. Para isso podemos usar o comando:
 
-```
+```bash
 apt edit-sources
 ```
 
@@ -67,7 +67,7 @@ Que oferecerá algumas opções de editores de texto para editar o arquivo, e ab
 
 Com o arquivo aberto, devemos substituir todos os lugares (desde que não estejam comentados) com `deb.debian.org` pelo nome do espelho recomendado pelo netselect-apt, em meu caso *`mirror.uepg.br`*, para que o arquivo fique dessa forma:
 
-![apt_e_netselect_06.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/apt_e_netselect_06.png)
+![apt_e_netselect_05.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/apt_e_netselect_05%201.png)
 
 Pronto, devemos salvar e sair. Como própria recomendação da ferramenta, após editarmos o arquivo deve-se atualizar novamente a lista de pacotes (pode-se reparar que a saída dessa vez será mais longa, pois o espelho será diferente).
 
@@ -76,36 +76,30 @@ Pronto, devemos salvar e sair. Como própria recomendação da ferramenta, após
 - Para entender melhor (ou se aprofundar no assunto) pode-se consultar o seguinte manual de **Como usar o APT:**
 [https://www.debian.org/doc/manuals/apt-howto/index.pt-br.html](https://www.debian.org/doc/manuals/apt-howto/index.pt-br.html)
 - comandos do apt comentados:
-
-	**apt update**: atualiza a lista de pacotes;
-
-	**apt list --upgradable**: lista os pacotes que podem ser atualizados;
-
-	**apt upgrade**: instala atualizações disponíveis para os programas presentes no sistema;
-
-	**apt search**: pesquisa pacotes com o nome ou descrição que possuam a palavra informada;
-
-	**apt install**: instala um novo pacote;
-
-	**apt edit-sources**: abre o arquivo /etc/apt/sources.list para edição.
+**apt update**: atualiza a lista de pacotes;
+**apt list --upgradable**: lista os pacotes que podem ser atualizados;
+**apt upgrade**: instala atualizações disponíveis para os programas presentes no sistema;
+**apt search**: pesquisa pacotes com o nome ou descrição que possuam a palavra informada;
+**apt install**: instala um novo pacote;
+**apt edit-sources**: abre o arquivo /etc/apt/sources.list para edição.
 
 ## Tlp
 
 Essa é uma ferramenta de gerenciamento de energia no Linux, sendo necessária para economizar bateria em notebooks. Funciona apenas na linha de comando, e embora possa ser configurado a gosto do usuário, iremos apenas instalá-lo para assim termos uma bateria mais duradoura em nosso notebook. Com o terminal aberto, o root logado e a lista de pacotes atualizada, pode-se usar o comando:
 
-```
+```bash
 apt install tlp
 ```
 
-![tlp_01.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/tlp_01.png)
+![tlp_01.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/tlp_01.png)
 
 Após instalado, podemos verificar se o tlp já está em uso com o comando `tlp-stat -s`:
 
-![tlp_02.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/tlp_02.png)
+![tlp_02.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/tlp_02.png)
 
 Como pode-se ver após `TLP Status`, ele já está habilitado, caso não estivesse, deveria-se usar o comando:
 
-```
+```bash
 tlp start
 ```
 
@@ -113,11 +107,11 @@ tlp start
 
 Esse é um leve e simples cliente de BitTorrent, usado por mim principalmente para baixar imagens de outras distribuições Linux. Para instalá-lo, basta usar:
 
-```
+```bash
 apt install transmission
 ```
 
-![transmission.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/transmission.png)
+![transmission.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/transmission.png)
 
 Por ser uma aplicação com interface gráfica, diferente dos até então instalados que rodam apenas na linha de comando, esse programa terá um ícone como atalho para executá-lo, adicionado automaticamente no menu do sistema, encontrado na seção `Internet`.
 
@@ -125,11 +119,11 @@ Por ser uma aplicação com interface gráfica, diferente dos até então instal
 
 Esse é um gerenciador de Bluetooth gráfico, simples e fácil de usar. Para instalá-lo:
 
-```
+```bash
 apt install blueman
 ```
 
-![blueman.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/blueman.png)
+![blueman.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/blueman.png)
 
 O ícone de atalho para executá-lo será adicionado no menu na seção `Settings`, e é chamado de `Bluetooth Manager`.
 
@@ -137,13 +131,31 @@ O ícone de atalho para executá-lo será adicionado no menu na seção `Setting
 
 Esse é um monitor de sistema, ou seja, usado para visualizar o uso do hardware, processos em execução e outras informações sobre o computador e o sistema, e exibe todas essas informações diretamente na área de trabalho. É muito útil para vermos informações como uso da CPU e da RAM, sem precisarmos rodar algum comando. Para instalá-lo, basta usar:
 
-```
+```bash
 apt install conky
 ```
 
-![conky.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/conky.png)
+![conky.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/conky.png)
 
 O ícone de atalho para executá-lo será adicionado no menu na seção `System`. Inicialmente ele possuirá uma interface, particularmente, não muito bonita, porém facilmente personalizável. Sua personalização será feita na próxima seção, portanto ainda não será executado.
+
+## Trash-cli
+
+Quando usamos o comando `rm` no terminal para excluir um arquivo, esse arquivo é removido permanentemente do sistema, diferente de quando clicamos em `Del` com um arquivo selecionado no gerenciador de arquivos, onde na verdade o mandamos para a lixeira. `Trash-cli`, como o nome sugere, é uma ferramenta que permite manipular a lixeira do sistema pela linha de comando, possibilitando mandar arquivos para ela, restaurar, listar, e outras funções. Para instalá-lo basta usar:
+
+```bash
+apt install trash-cli
+```
+
+![trash-cli.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/trash-cli.png)
+
+Para usá-lo é muito simples, seus três principais comandos são:
+
+- **trash**: deve-se passar o nome de um arquivo como argumento, manda esse arquivo para a lixeira;
+- **trash-restore**: restaura um arquivo da lixeira. É mostrado uma lista de arquivos para selecionar qual deve ser restaurado. Pode-se passar como argumento o caminho (não precisa estar completo) de um arquivo para diminuir o tamanho da lista;
+- **trash-list**: mostra uma lista dos arquivos presentes na lixeira.
+
+Esse programa usa a mesma lixeira da interface gráfica, portanto, os itens removidos aparecerão tanto em trash-list quanto no gerenciador de arquivos.
 
 ## Desenvolvimento
 
@@ -153,15 +165,16 @@ Alguns dos pacotes a ser instalados são necessários para desenvolver aplicaç�
 
 Primeiramente vamos instalar o `build-essential`, necessário para compilar códigos feitos em C e executar arquivos makefile, entre outras funcionalidades:
 
-```
+```bash
 apt install build-essential
 ```
 
-![build-essential.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/build-essential.png)
+![desenvolvimento_01.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/desenvolvimento_01.png)
 
 Esse pacote na verdade possui uma lista de pacotes como dependências, para que eles sejam instalados todos de uma vez ao rodar o comando a cima. Se usado o comando `apt show build-essential` pode-se ver quais são suas dependências:
 
 > Depends: libc6-dev | libc-dev, gcc (>= 4:10.2), g++ (>= 4:10.2), make, dpkg-dev (>= 1.17.11)
+> 
 
 O caractere `|` significa **ou**, e a vírgula separa as dependências, e as versões (após `>=`) dos pacotes são em relação à versão atualmente instalada do build-essential em minha máquina, a versão `12.9`, como pode-se ver na saída no comando. Se reparado na primeira imagem, foram instalados mais pacotes do que o build-essential depende, isso pois suas dependências também dependem de outros pacotes, e assim por diante.
 
@@ -169,11 +182,11 @@ O caractere `|` significa **ou**, e a vírgula separa as dependências, e as ver
 
 Agora vamos instalar o `openjdk-17-jdk` (é a versão mais atual do openjdk segundo o `apt search openjdk`), necessário para programar usando Java e executar programas feitos usando essa linguagem, existe outras opções para esse objetivo também:
 
-```
+```bash
 apt install openjdk-17-jdk
 ```
 
-![openjdk-17-jdk.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/openjdk-17-jdk.png)
+![desenvolvimento_02.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/desenvolvimento_02.png)
 
 Para executar um programa feito em Java (com a extensão .jar), basta usar o comando `java -jar` mais o nome (ou caminho caso não esteja na pasta atual) do programa.
 
@@ -181,22 +194,22 @@ Para executar um programa feito em Java (com a extensão .jar), basta usar o com
 
 O `git` é um programa de versionamento muito utilizado por desenvolvedores, usado por exemplo para gerenciar esse projeto e ser um meio antes de passá-lo para o GitHub.
 
-```
+```bash
 apt install git
 ```
 
-![git.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/git.png)
+![git.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/git.png)
 
 Após instalado, é interessante configurá-lo, pode-se fazer o básico com os dois comandos:
 
-```
+```bash
 git config --global user.name seu_nome
 git config --global user.email seu_email
 ```
 
 Onde em `seu_nome` deve-se usar o nome do seu usuário e em `seu_email` o email que você usa, é interessante usar o nome e email pensando em seus projetos e em seu GitHub, caso contrário, não precisa-se fazer essas configurações. Para verificar se as configurações ocorreram corretamente, pode-se usar:
 
-```
+```bash
 git config --list
 ```
 
@@ -204,11 +217,11 @@ git config --list
 
 `Geany` é uma IDE leve e simplificada, com suporte a diversas linguagens. Para instalá-lo, basta usar:
 
-```
+```bash
 apt install geany
 ```
 
-![geany.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/geany.png)
+![desenvolvimento_04.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/desenvolvimento_04.png)
 
 O ícone de atalho para ele executá-lo será adicionado no menu na seção `Development`.
 
@@ -216,92 +229,21 @@ O ícone de atalho para ele executá-lo será adicionado no menu na seção `Dev
 
 Esse é um player de vídeo simples e leve, e pode ser manipulado apertando as teclas do teclado para aumentar/abaixar o volume, o brilho, tirar screenshots, dentre outras funcionalidades. Esse player sempre funcionou bem quando o utilizei, diferentemente do `Parole Media Player`, que mesmo não tendo o usado muito, apresentou alguns problemas com a legenda (provavelmente fácil de se consertar, mas por já ter usado o `mpv` e gostado dele, preferi fazer essa substituição). Para instalar o mpv, não há segredo:
 
-```
+```bash
 apt install mpv
 ```
 
-![mpv_01.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/mpv_01.png)
+![mpv_01.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/mpv_01.png)
 
 Agora podemos então desinstalar o player de vídeo Parole, faremos isso usando o comando `apt remove --purge`, o argumento `--purge` pede para o APT remover também os arquivos de configuração do aplicativo:
 
-```
+```bash
 apt remove --purge parole
 ```
 
-![mpv_02.png](https://github.com/mutannejs/mjs_debian/blob/master/imagens/mpv_02.png)
+![mpv_02.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/mpv_02.png)
 
 O atalho para executá-lo será adicionado no menu na seção `Multimedia`, ao mesmo tempo que o atalho do Parole fora removido.
-
-## Firefox
-
-Embora o Debian venha com o navegador `Firefox` por padrão, esse é o Firefox Extended Support Release (`ESR`), voltado para uso em instituições e não recebe atualizações da mesma forma que a versão padrão. A versão padrão, por sua vez, não está disponível nos repositórios do Debian, logo, não pode-se instalar usando o APT, deve ser baixado por algum navegador e instalado segundo o tutorial de seu site.
-
-O arquivo pode ser baixado em:
-
-[https://www.mozilla.org/pt-BR/firefox/download/thanks/](https://www.mozilla.org/pt-BR/firefox/download/thanks/)
-
-O tutorial para instalá-lo pode ser lido em:
-
-[https://support.mozilla.org/en-US/kb/install-firefox-linux](https://support.mozilla.org/en-US/kb/install-firefox-linux)
-
-A forma que usei foi usando um [pacote da Mozilla](https://support.mozilla.org/pt-BR/kb/instale-o-firefox-no-linux#w_instale-o-firefox-usando-um-pacote-da-mozilla-para-usuarios-mais-avancados), sendo necessário:
-
-1. Após baixar o arquivo no link a cima (ou de outra maneira), dentro do terminal deve-se entrar na pasta Downloads. Isso pode ser feito com o comando:
-    
-    ```
-    cd Downloads
-    ```
-    
-2. Deve-se extrair o pacote baixado.
-    
-    O arquivo é um pacote .tar.bz2, ou seja:
-
-    - **.tar**: significa que esse arquivo são arquivos ou diretórios empacotados (ou arquivados) em um único arquivo, seguindo sua estrutura original e trazendo informações como: data da última modificação, permissões de acesso, e outras informações.
-    - **.bz2**: significa que o arquivo foi comprimido, ou seja, é um arquivo menor ao original (o pacote `firefox-113.0.1.tar.bz2` possui 77MB, enquanto seus arquivos originais (os mesmos adquiridos após extrair e descomprimir o pacote) possuem juntos 236MB) que pode ser descomprimido para gerar uma cópia idêntica a ele.
-    
-    Tanto para comprimir, quanto para arquivar, existe outras maneiras e ferramentas que podem ser usadas, gerando então, outras extensões. Para saber o tamanho do pacote foi usado o comando `du -h` seguido de seu nome, o argumento `-h` mostra o tamanho em MB.
-    
-    Para extrair o pacote basta usar o comando:
-    
-    ```
-    tar -xjf firefox-*.tar.bz2
-    ```
-    
-    - O argumento `-x` implica que o arquivo será extraído, ao contrário, poderia-se usar `-c` para criar um arquivo.
-    
-    - O argumento `-j` é usado para indicar que o arquivo foi comprimido usando a ferramenta `bzip2`, outras ferramentas - poderiam ter sido usadas para comprimi-lo, como o `xz` (geraria um arquivo com extensão `.xz`) ou o `gzip` (geraria um arquivo com extensão `.gz`).
-    
-    - O argumento `f` indica que a operação usará um arquivo em disco, deve ser usado por último, por exigir que o nome do arquivo seja informado logo em seguida. Por outro lado o comando a seguir poderia ter sido usado para atingir o mesmo resultado, ou alguma outra combinação dos argumentos, ou com outro argumento a mais:
-    
-    ```
-    tar -f firefox-113.0.1.tar.bz2 -x -j
-    ```
-    
-3. Teremos então extraído o diretório `firefox`, o qual deve ser movido para a pasta `/opt` (diretório destinado a softwares adicionados pelo usuário):
-    
-    ```
-    mv firefox /opt
-    ```
-    
-4. Criamos então um link simbólico do executável do firefox, o arquivo `/opt/firefox/firefox`, para a pasta `/usr/local/bin`, essa pasta é responsável por armazenar os programas locais no sistema, ou seja, adicionados pelos usuários. Para criar um link simbólico usamos o comando `ln -s`:
-    
-    ```
-    ln -s /opt/firefox/firefox /usr/local/bin/firefox
-    ```
-    
-5. Por fim, vamos adicionar um ícone de atalho no menu para o executável com o comando (o programa wget foi instalado junto ao netselect, mas caso ele não esteja instalado, pode-se verificar isso usando o `apt search`, basta instalá-lo com o `apt install`):
-    
-    ```
-    wget https://raw.githubusercontent.com/mozilla/sumo-kb/main/install-firefox-linux/firefox.desktop -P /usr/local/share/applications
-    ```
-    
-    O comando `wget` é usado para baixar um arquivo da internet e o argumento `-P` informa em qual diretório ele deve ser baixado.
-    
-Pronto, o firefox foi instalado. Agora falta remover a versão ESR. Para isso deve-se fazer do mesmo modo feito com o Parole media player, basta rodar o comando `apt remove`:
-
-```
-apt remove --purge firefox-esr
-```
 
 ## LibreOffice
 
@@ -309,7 +251,7 @@ LibreOffice é uma suíte de aplicativos para escritório que vem por padrão in
 
 Para adicionar o suporte a pt-BR, deve-se instalar o pacote `libreoffice-l10n-pt-br`:
 
-```
+```bash
 apt install libreoffice-l10n-pt-br
 ```
 
@@ -323,7 +265,7 @@ Agora para deixá-lo em português:
 
 Mas caso não queira usar o LibreOffice, pode-se excluí-lo com o seguinte comando:
 
-```
+```bash
 apt remove --purge libreoffice* && apt autoremove --purge -y
 ```
 
@@ -335,3 +277,116 @@ Significado:
 - o argumento `-y` faz com que o `apt autoremove` seja executado sem perguntar ao usuário se ele quer mesmo continuar com a operação.
 
 Portanto, o comando remove o LibreOffice e todos os pacotes que não serão mais usados após sua remoção, sendo necessário apenas confirmar uma vez que deseja-se continuar.
+
+## Firefox
+
+Embora o Debian venha com o navegador `Firefox` por padrão, esse é o Firefox Extended Support Release (`ESR`), voltado para uso em instituições e não recebe atualizações da mesma forma que a versão padrão. A versão padrão, por sua vez, não está disponível nos repositórios do Debian 11, logo, não pode-se instalar usando o APT, deve ser baixado por algum navegador e instalado segundo o tutorial de seu site.
+
+O arquivo pode ser baixado em:
+
+[https://www.mozilla.org/pt-BR/firefox/download/thanks/](https://www.mozilla.org/pt-BR/firefox/download/thanks/)
+
+O tutorial para instalá-lo pode ser lido em:
+
+[https://support.mozilla.org/en-US/kb/install-firefox-linux](https://support.mozilla.org/en-US/kb/install-firefox-linux)
+
+A forma que usei foi usando um [pacote da Mozilla](https://support.mozilla.org/pt-BR/kb/instale-o-firefox-no-linux#w_instale-o-firefox-usando-um-pacote-da-mozilla-para-usuarios-mais-avancados), sendo necessário:
+
+1. Após baixar o arquivo no link a cima (ou de outra maneira), dentro do terminal deve-se entrar na pasta Downloads. Isso pode ser feito com o comando:
+    
+    ```bash
+    cd Downloads
+    ```
+    
+2. Deve-se extrair o pacote baixado. O arquivo é um pacote .tar.bz2, ou seja:
+    - **.tar**: significa que esse arquivo são arquivos ou diretórios empacotados (ou arquivados) em um único arquivo, seguindo sua estrutura original e trazendo informações como: data da última modificação, permissões de acesso, e outras informações.
+    - **.bz2**: significa que o arquivo foi comprimido, ou seja, é um arquivo menor ao original (o pacote `firefox-113.0.1.tar.bz2` possui 77MB, enquanto seus arquivos originais (os mesmos adquiridos após extrair e descomprimir o pacote) possuem juntos 236MB) que pode ser descomprimido para gerar uma cópia idêntica a ele.
+    
+    Tanto para comprimir, quanto para arquivar, existe outras maneiras e ferramentas que podem ser usadas, gerando então, outras extensões. Para saber o tamanho do pacote foi usado o comando `du -h` seguido de seu nome, o argumento `-h` mostra o tamanho em MB.
+    
+    Para extrair o pacote basta usar o comando:
+    
+    ```bash
+    tar -xjf firefox-*.tar.bz2
+    ```
+    
+    O argumento `-x` implica que o arquivo será extraído, ao contrário, poderia-se usar `-c` para criar um arquivo.
+    
+    O argumento `-j` é usado para indicar que o arquivo foi comprimido usando a ferramenta `bzip2`, outras ferramentas poderiam ter sido usadas para comprimi-lo, como o `xz` (geraria um arquivo com extensão `.xz`) ou o `gzip` (geraria um arquivo com extensão `.gz`).
+    
+    O argumento `f` indica que a operação usará um arquivo em disco, deve ser usado por último, por exigir que o nome do arquivo seja informado logo em seguida. Por outro lado o comando a seguir poderia ter sido usado para atingir o mesmo resultado, ou alguma outra combinação dos argumentos, ou com outro argumento a mais:
+    
+    ```bash
+    tar -f firefox-113.0.1.tar.bz2 -x -j
+    ```
+    
+3. Teremos então extraído o diretório `firefox`, o qual deve ser movido para a pasta `/opt` (diretório destinado a softwares adicionados pelo usuário):
+    
+    ```bash
+    mv firefox /opt
+    ```
+    
+4. Criamos então um link simbólico do executável do firefox, o arquivo `/opt/firefox/firefox`, para a pasta `/usr/local/bin`, essa pasta é responsável por armazenar os programas locais no sistema, ou seja, adicionados pelos usuários. Para criar um link simbólico usamos o comando `ln -s`:
+    
+    ```bash
+    ln -s /opt/firefox/firefox /usr/local/bin/firefox
+    ```
+    
+5. Por fim, vamos adicionar um ícone de atalho no menu para o executável com o comando (o programa wget foi instalado junto ao netselect, mas caso ele não esteja instalado, pode-se verificar isso usando o `apt search`, basta instalá-lo com o `apt install`):
+    
+    ```bash
+    wget https://raw.githubusercontent.com/mozilla/sumo-kb/main/install-firefox-linux/firefox.desktop -P /usr/local/share/applications
+    ```
+    
+    O comando `wget` é usado para baixar um arquivo da internet e o argumento `-P` informa em qual diretório ele deve ser baixado.
+    
+
+Pronto, o firefox foi instalado.
+
+Agora, teremos dois firefox instalados no sistema? Poderíamos desinstalar o firefox-esr usando o APT, porém, alguns pacotes dependem dele, portanto não é recomendado desinstalá-lo. Na imagem abaixo, podemos ver que ao tentar remove-lo, alguns pacotes adicionais seriam instalados, dentre eles o pacote `epiphany-browser`. Epiphany é o browser do projeto GNOME, e como podemos ver na saída do `dpkg -r firefox-esr`, o firefox-esr ou o epiphany-browser (além de outras opções de browsers) é uma dependência do `libreoffice-help-en-us`. Logo, ao desinstalar o firefox-esr, o APT instalará a primeira opção dentre os browser listados, no caso, o Epiphany. 
+
+Com essa situação, o que podemos fazer, é marcar o firefox (não ESR) como navegador principal, e ocultar a versão ESR no menu de aplicativos.
+
+Para mudar o navegador padrão, deveremos usar o comando `update-alternatives`:
+
+```bash
+update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/local/bin/firefox 90
+```
+
+Temos atualmente três browsers instalados no sistema, o firefox, firefox-esr e o hv3. Mas antes de executar esse comando, pode-se dizer que o sistema “desconhecia” esse novo browser instalado, o comando mostra para o sistema a existência dele e marca ele como principal browser. O `update-alternatives` é um gerenciador de links simbólicos, e `x-www-browser` é o link simbólico para o browser usado no sistema, como pode existir mais de um, o update-alternatives é quem define qual browser deve ser aberto. Quando o usamos com o argumento `--install`, estamos adicionando mais uma opção de browser para ser executado a partir de x-www-browser:
+
+- **/usr/bin/x-www-browser**:
+- **x-www-browser**:
+- **/usr/local/bin/firefox**:
+- **90**:
+
+Para ocultar o firefox-esr no menu de aplicativos, vamos adicionar uma linha no final do arquivo que define seu ícone, esse é o arquivo `/usr/share/applications/firefox-esr.desktop`. Nesse diretório há outros ícones do menu, se reparado no comando feito no passo 5 da instalação manual do firefox, estamos adicionando seu ícone na pasta `/usr/local/share/applications`, o que muda é apenas o diretório `local`, isso porque arquivos adicionados pelo usuário devem ficar dentro desse diretório, como o próprio executável do firefox (como descrito no passo 4). Podemos abrir o arquivo com o nano e adicionar a linha seguir no fim dele:
+
+> NoDisplay=true
+> 
+
+Pronto, seu atalho não aparecerá mais no menu de aplicativos, e caso cliquemos em Web Browser será executado o firefox que instalamos manualmente.
+
+## Testdisk e Timeshift
+
+Essas duas ferramentas servem para ter uma segurança a mais utilizando o sistema. Caso algum erro seja feito pelo usuário, removendo arquivos importantes ou deixando o sistema de um jeito que não consiga voltar para um estado anteior apenas configurando-o, esses são dois programas que seria interessante já ter instalados na máquina.
+
+O `Testdisk` é um programa para recuperar arquivos, ao instalar essa pacote o programa `photorec` também virá junto. O photorec tem a mesma funcionalidade, mas funciona para partições ext4, como a usada na partição raiz, diferentemente do testdisk que não funciona para esse sistema de arquivos. Portanto, teremos um arsenal completo (ou quase) para recuperação de arquivos excluídos. Para instalá-lo, basta usar:
+
+```bash
+apt install testdisk
+```
+
+![testdisk_e_timeshift_01.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/testdisk_e_timeshift_01.png)
+
+Agora, caso precise, deve-se usar o comando `testdisk` ou `photorec`, seguir as instruções e recuperar seu arquivo excluído. É interessante já possuir esse programa instalado antes de precisar usá-lo, para não escrever nada em cima do arquivo no disco, fazendo o mínimo de operações possíveis antes de recuperá-lo.
+
+O `Timeshift` é um programa que cria snapshot’s do sistema, ou seja, ele cria pontos de restaurações. Pode ser usado tanto em modo gráfico, quanto pela linha de comando. Para instalá-lo basta usar:
+
+```bash
+apt install timeshift
+```
+
+![testdisk_e_timeshift_02.png](Aplicativos%208829b1d69c354903824bd8a62a3e7b70/testdisk_e_timeshift_02.png)
+
+O atalho para executá-lo será adicionado no menu na seção `System`.
