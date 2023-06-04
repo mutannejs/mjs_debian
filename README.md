@@ -12,8 +12,6 @@ Este é um passo a passo da instalação e da pós-instalação do Debian 11
 
 Esse projeto foi iniciado dia 25 de abril de 2023.
 
----
-
 ## Últimas mudanças
 
 Na seção **Configuração** foi adicionado o tópico **Touchpad**;
@@ -21,28 +19,21 @@ Na seção **Configuração** foi adicionado o tópico **Touchpad**;
 Na seção **Aplicativos** foi adicionado os tópicos **Trash-cli**,
  **Testdisk e Timeshift** e o tópico **Firefox** foi modificado.
 
----
-
 ## [Instalação](./instalacao)
 
 Possui os passos feitos para instalar o Debian em minha máquina.
 
 É discutido:
 
-- **Baixando o arquivo ISO** : qual iso baixar;
+- [**Baixando o arquivo ISO**](./instalacao#baixando-o-arquivo-iso) : qual iso baixar;
 
-- **Gravando uma mídia** : como usar o BalenaEtcher para gravar um
- pendrive bootável;
+- [**Gravando uma mídia**](./instalacao#gravando-uma-m%C3%ADdia) : como usar o BalenaEtcher para gravar um pendrive bootável;
 
-- **Mudando a ordem de boot** : como fazer o computador ligar no
- istalador do debian;
+- [**Mudando a ordem de boot**](./instalacao#mudando-a-ordem-de-boot) : como fazer o computador ligar no istalador do debian;
 
-- **Instalando** : instalação do Debian usando modo gráfico;
+- [**Instalando**](./instalacao#instalando) : instalação do Debian usando modo gráfico;
 
-- **Exemplos de particionamento** : exemplos de particionamento feito
- usando o instalador do Debian, manual e guiado.
-
----
+- [**Exemplos particionamento**](./instalacao#exemplos-particionamento) : exemplos de particionamento feito usando o instalador do Debian, manual e guiado.
 
 ## [Configuração](./configuracao)
 
@@ -51,21 +42,17 @@ Possui algumas configurações feitas no sistema antes de instalar novos
 
 É discutido:
 
-- **Touchpad** : como ativar clique tocando no touchpad;
+- [**Touchpad**](./configuracao#touchpad) : como ativar clique tocando no touchpad;
 
-- **GRUB** : como aumentar o tempo de espera da tela de escolha do
- sistema operacional a ser inicializado;
+- [**GRUB**](./configuracao#grub) : como aumentar o tempo de espera da tela de escolha do sistema operacional a ser inicializado;
 
-- **Lightdm** : como exibir uma lista e usuários na tela de login;
+- [**Lightdm**](./configuracao#lightdm) : como exibir uma lista e usuários na tela de login;
 
-- **Sudo** : como permitir o usuário usar o comando sudo;
+- [**Sudo**](./configuracao#sudo) : como permitir o usuário usar o comando sudo;
 
-- **Fstab** : como montar uma partição automaticamente no boot do
- sistema;
+- [**Fstab**](./configuracao#fstab) : como montar uma partição automaticamente no boot do sistema;
 
-- **Alias** : como criar atalhos para comandos usados no terminal.
-
----
+- [**Alias**](./configuracao#alias) : como criar atalhos para comandos usados no terminal.
 
 ## [Aplicativos](./aplicativos)
 
@@ -73,43 +60,35 @@ Mostra os primeiros programas e pacotes instalados.
 
 É discutido:
 
-- **Apt e netselect** : como usar o gerenciador de pacotes do Debian e
- escolher o espelho mais adequado para sua máquina;
+- [**Apt e netselect**](./aplicativos#apt-e-netselect) : como usar o gerenciador de pacotes do Debian e escolher o espelho mais adequado para sua máquina;
 
-- **Tlp** : usado para economizar bateria no notebook;
+- [**Tlp**](./aplicativos#tlp) : usado para economizar bateria no notebook;
 
-- **Transmission** : leve e simples cliente de BitTorrent;
+- [**Transmission**](./aplicativos#transmission) : leve e simples cliente de BitTorrent;
 
-- **Blueman** : gerenciador de Bluetooth com interface gráfica;
+- [**Blueman**](./aplicativos#blueman) : gerenciador de Bluetooth com interface gráfica;
 
-- **Conky** : monitor de sistema na área de trabalho;
+- [**Conky**](./aplicativos#conky) : monitor de sistema na área de trabalho;
 
-- **Trash-cli** : usado para manipular a lixeira do sistema pela linha
- de comando;
+- [**Trash-cli**](./aplicativos#trash-cli) : usado para manipular a lixeira do sistema pela linha de comando;
 
-- **Desenvolvimento** : ferramentas usadas para programar
+- [**Desenvolvimento**](./aplicativos#desenvolvimento) : ferramentas usadas para programar
 
-    - **Build-essential** : necessário para compilar códigos feitos em C
-     e executar arquivos makefile;
+    - [**Build-essential**](./aplicativos#build-essential) : necessário para compilar códigos feitos em C e executar arquivos makefile;
 
-    - **Openjdk-17-jdk** : necessário para programar usando Java e
-     executar programas feitos usando essa linguagem;
+    - [**Openjdk-17-jdk**](./aplicativos#openjdk-17-jdk) : necessário para programar usando Java e executar programas feitos usando essa linguagem;
 
-    - **Git** : programa de versionamento muito utilizado por
-     desenvolvedores;
+    - [**Git**](./aplicativos#git) : programa de versionamento muito utilizado por desenvolvedores;
 
-    - **Geany** : IDE leve e simples;
+    - [**Geany**](./aplicativos#geany) : IDE leve e simples;
 
-- **Mpv** : instalar o mpv Media Player no lugar do Parole;
+- [**Mpv**](./aplicativos#mpv) : instalar o mpv Media Player no lugar do Parole;
 
-- **LibreOffice** : desinstalar ou adicionar suporte a pt-BR;
+- [**LibreOffice**](./aplicativos#libreoffice) : desinstalar ou adicionar suporte a pt-BR;
 
-- **Firefox** : instalando a versão padrão no lugar da ESR;
+- [**Firefox**](./aplicativos#firefox) : instalando a versão padrão no lugar da ESR;
 
-- **Testdisk e Timeshift** : aplicativos para recuperar arquivos
- excluídos e criar snapshot’s do sistema;
-
----
+- [**Testdisk e Timeshift**](./aplicativos#testdisk-e-timeshift) : aplicativos para recuperar arquivos excluídos e criar snapshot’s do sistema;
 
 ## Ferramentas Usadas
 

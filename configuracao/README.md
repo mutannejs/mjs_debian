@@ -79,7 +79,7 @@ Como feito a seguir:
 (Pode-se ver que as informações na linha de comando mudaram ao se logar
  como root)
 
-![grub_03.png](./imagens/grub_03.png)
+![grub_02.png](./imagens/grub_02.png)
 
 Dentro do nano com o arquivo aberto, devemos usar os direcionais para ir
  até a linha com `GRUB_TIMEOUT=5` e substituir `5` pelo tempo que
@@ -180,23 +180,23 @@ Caso haja alguma partição no disco que deseja-se acessar tipicamente,
  representam informações sobre a partição específica ou configurações
  de como ela será montada. As colunas do /etc/fstab são:
 
-- **<file system>**: é a partição a ser montada. É representada por seu
+- **\<file system\>**: é a partição a ser montada. É representada por seu
  identificador único universal (`UUID`). Para saber o UUID deve-se usar
  o comando `blkid`, seu valor deve ser escrito após `UUID=`, igualmente
  à saída do comando blkid. Outro comando útil é o `lsblk -f`, que mostra
  informações como o UUID, o tipo do sistema de arquivos (necessário
  informar em outra coluna mais a frente) e onde a partição está montada.
 
-- **<mount point>**: o caminho onde a partição será montada. Os discos e
+- **\<mount point\>**: o caminho onde a partição será montada. Os discos e
  dispositivos costumam ser montados em diretórios localizados em
  `/media`, para criar um diretório deve-se usar o comando `mkdir`,
  exemplo: *mkdir /media/seguranca*.
 
-- **<type>**: o tipo da partição, como ntfs, ext4, vfat, swap, entre
+- **\<type\>**: o tipo da partição, como ntfs, ext4, vfat, swap, entre
  outros. O tipo da partição também pode ser visto usando o comando blkid
  logo após `TYPE=`.
 
-- **<options>**: opções de montagem, como somente leitura (**ro**), ser
+- **\<options\>**: opções de montagem, como somente leitura (**ro**), ser
  montado automaticamente (**auto**), entre outras. Foi usada apenas a
  opção ***defaults***, equivalente a usar
  **rw,suid,dev,exec,auto,nouser,async**. Resumidamente essas opções dão
@@ -207,13 +207,13 @@ Caso haja alguma partição no disco que deseja-se acessar tipicamente,
  de forma assíncrona (**async**) e é permitido a operação de bits suid e
  sgid (**suid**).
 
-- **<dump>**: indica se a partição deve receber um backup do programa
+- **\<dump\>**: indica se a partição deve receber um backup do programa
  dump. Esse programa gera uma backup de toda a partição. Caso queira
  usá-lo deve-se setar esse campo com `1`, caso não queira usar deve-se
  setar com `0`. O dump normalmente não vem instalado, então deve ser `0`
  antes de sua instalação.
 
-- **<pass>**: indica em que ordem as partições devem ser verificadas
+- **\<pass\>**: indica em que ordem as partições devem ser verificadas
  pelo programa fsck, a procura de erros. A partição raiz deve receber
  `1` (maior prioridade), e as outras devem receber `2` (menor
  prioridade) ou `0` (não deve ser verificada).

@@ -26,28 +26,19 @@ Com o conteúdo do arquivo `SHA512SUMS` presente na mesma página da ISO.
 
 A imagem ISO a ser baixada depende do ambiente que ela será usada:
 
-- **CD**
+- **CD** Irá baixar os pacotes durante a instalação. Pode ser usada se
+ possuir acesso à internet. Possui menos de 700MB.
 
-Irá baixar os pacotes durante a instalação. Pode ser usada se possuir
- acesso à internet. Possui menos de 700MB.
+- **DVD** Os pacotes já vem dentro da ISO. Deve ser usada quando não há
+ acesso à internet. Possui cerca de 4GB.
 
-- **DVD**
+- **live** Há a opção de experimentar o sistema sem a necessidade de
+ instalá-lo.
 
-Os pacotes já vem dentro da ISO. Deve ser usada quando não há acesso à
- internet. Possui cerca de 4GB.
+- **edu** Uma ISO do Debian feita para o ambiente educacional.
 
-- **live**
-
-Há a opção de experimentar o sistema sem a necessidade de instalá-lo.
-
-- **edu**
-
-Uma ISO do Debian feita para o ambiente educacional.
-
-- **firmware**
-
-Imagem (não oficial) com firmwares não livres, necessários para algumas
- placas de vídeo e de rede.
+- **firmware** Imagem (não oficial) com firmwares não livres,
+ necessários para algumas placas de vídeo e de rede.
 
 ## Gravando uma mídia
 
@@ -98,8 +89,8 @@ Antes, é importante ressaltar que os prints nessa seção foram feitos
  usando uma máquina virtual no
  [VirtualBox](https://www.virtualbox.org/), portanto alguns detalhes
  podem ser diferentes de uma instalação real, tanto nos prints, quanto
- na descrição geral dos passos. Porém foi tentado replicar e explicar os
- passos de uma instalação real o mais fidedigno possível.
+ na descrição geral dos passos. Porém, foi tentado replicar e explicar
+ os passos de uma instalação real o mais fidedigno possível.
 
 Reiniciado a máquina cairemos nessa tela:
 
@@ -154,44 +145,44 @@ Em seguida:
  o usuário, mas se feito com atenção e lendo as mensagens não haverá
  nenhum problema:
 
-Caso use o modo de **particionamento guiado**:
-Caso o disco esteja totalmente vazio, o sistema será instalado usando
- todo ele (`Guided - use entire disk`), caso não esteja, será usado a
- maior parte livre do disco (`Guided - use the largest continuous free
- space`). Dev-se escolher se o sistema usará apenas uma partição para
- tudo (o padrão), se usará a `/home` separada, ou se usará a `/home`, a
- `/var` e a `/tmp` separadas. Em todos os casos será criado também uma
- partição de SWAP. Após escolher deve-se clicar em `Finish partitioning
- and write changes to disk`, e na próxima tela selecionar `Yes` e depois
- clicar em `Continue`.
+	Caso use o modo de **particionamento guiado**:
+	Caso o disco esteja totalmente vazio, o sistema será instalado usando
+	 todo ele (`Guided - use entire disk`), caso não esteja, será usado a
+	 maior parte livre do disco (`Guided - use the largest continuous free
+	 space`). Dev-se escolher se o sistema usará apenas uma partição para
+	 tudo (o padrão), se usará a `/home` separada, ou se usará a `/home`, a
+	 `/var` e a `/tmp` separadas. Em todos os casos será criado também uma
+	 partição de SWAP. Após escolher deve-se clicar em `Finish partitioning
+	 and write changes to disk`, e na próxima tela selecionar `Yes` e depois
+	 clicar em `Continue`.
 
-Caso use o modo de **particionamento manual**:
-É necessário escolher qual é a partição de sistema EFI (onde está
- guardado os dados necessários para iniciar os sistemas operacionais
- instalados máquina) do disco, e qual partição será usada como raiz do
- novo SO. Opcionalmente pode-se escolher uma partição para usar como
- SWAP, e uma partição para usar a /home separada (o mesmo pode ser feito
- para outros diretórios).
-Se as partições forem criadas a partir de um espaço livre do disco (se
- já existir um SO instalado na máquina, a partição de sistema EFI já
- existirá, sendo a primeira partição do disco), para cada uma deve-se
- escolher o tamanho dela, se ela vai ser criada no início ou no fim da
- parte livre do disco escolhida, qual o seu tipo (`EFI`, `ext4`, `swap
- area`, ou outro tipo) e setar onde ela será montada (`/`, `/home`, ou
- outra de sua escolha).
-Em `Use as` deve ser escolhido o tipo da partição, recomendado usar
- `ext4 journaling file system` para a raiz e para a `/home`, para a
- partição SWAP usar `swap area`, e para a partição de sistema `EFI` usar
- `EFI System Partition`.
-Para setar onde a partição será montada deve-se alterar a informação em
- `Mount point`. A partição principal do sistema deve ser setada como
- `/`, a partição de sistema EFI e a SWAP não possuem essa opção. Pode-se
- setar uma partição como `/home` caso queira usar a /home separada da
- raiz, e para usar também outras pastas separadas basta fazer o mesmo em
- outra partição.
+	Caso use o modo de **particionamento manual**:
+	É necessário escolher qual é a partição de sistema EFI (onde está
+	 guardado os dados necessários para iniciar os sistemas operacionais
+	 instalados máquina) do disco, e qual partição será usada como raiz do
+	 novo SO. Opcionalmente pode-se escolher uma partição para usar como
+	 SWAP, e uma partição para usar a /home separada (o mesmo pode ser feito
+	 para outros diretórios).
+	Se as partições forem criadas a partir de um espaço livre do disco (se
+	 já existir um SO instalado na máquina, a partição de sistema EFI já
+	 existirá, sendo a primeira partição do disco), para cada uma deve-se
+	 escolher o tamanho dela, se ela vai ser criada no início ou no fim da
+	 parte livre do disco escolhida, qual o seu tipo (`EFI`, `ext4`, `swap
+	 area`, ou outro tipo) e setar onde ela será montada (`/`, `/home`, ou
+	 outra de sua escolha).
+	Em `Use as` deve ser escolhido o tipo da partição, recomendado usar
+	 `ext4 journaling file system` para a raiz e para a `/home`, para a
+	 partição SWAP usar `swap area`, e para a partição de sistema `EFI` usar
+	 `EFI System Partition`.
+	Para setar onde a partição será montada deve-se alterar a informação em
+	 `Mount point`. A partição principal do sistema deve ser setada como
+	 `/`, a partição de sistema EFI e a SWAP não possuem essa opção. Pode-se
+	 setar uma partição como `/home` caso queira usar a /home separada da
+	 raiz, e para usar também outras pastas separadas basta fazer o mesmo em
+	 outra partição.
 
-No fim dessa seção (**Instalando**), há exemplos tanto do
- particionamento guiado, quanto manual.
+	No fim dessa seção (**Instalando**), há exemplos tanto do
+	 particionamento guiado, quanto manual.
 
 12. Terminando o particionamento a instalação da base do sistema base é
  iniciada.
@@ -237,14 +228,14 @@ Nos exemplos vamos considerar um disco de aproximadamente 20 GB, onde já
  máquina e queremos fazer um dual boot. Após escolhermos a zona horária
  cairemos na seguinte tela:
 
-![exemplos_particionamento_01.png](./imagens/exemplos_particionamento_01)
+![exemplos_particionamento_01.png](./imagens/exemplos_particionamento_01.png)
 
 Se o disco estivesse totalmente vazio não teríamos a opção `Guided - use
  the largest continuous free space`, o recomendado seria usar então
  `Guided - use entire disk` ou o modo `Manual`.
 Após escolher a opção que queremos é necessário escolher o disco:
 
-![exemplos_particionamento_02.png](./imagens/exemplos_particionamento_02)
+![exemplos_particionamento_02.png](./imagens/exemplos_particionamento_02.png)
 
 **guiado**:
 
@@ -303,7 +294,7 @@ Até está tela nenhuma modificação no disco tinha sido feita de verdade,
 
 Cairemos em uma tela para criar ou modificar as partições no disco:
 
-![manual_01.png](manual_01.png)
+![manual_01.png](./imagens/manual_01.png)
 
 Na imagem a cima temos 2 partições já criadas, que não modificaremos, há
  também um espaço livre no disco de `1 MB` que é criado automaticamente,
@@ -334,11 +325,11 @@ Primeiramente deve-se clicar na linha com `16.5 GB` de espaço livre,
  (`12.5 GB`), escolher criar a partição no início do espaço livre
  (`Beginning`) e setar os dados como raiz do sistema:
 
-![manual_02.png](manual_02.png)
+![manual_02.png](./imagens/manual_02.png)
 
-![manual_03.png](manual_03.png)
+![manual_03.png](./imagens/manual_03.png)
 
-![manual_04.png](manual_04.png)
+![manual_04.png](./imagens/manual_04.png)
 
 Para setar a partição como raiz do sistema, devemos em `Use as` escolher
  `ext4 journaling file system` (esse é o tipo que será usado na
@@ -348,24 +339,24 @@ Para setar a partição como raiz do sistema, devemos em `Use as` escolher
  selecionadas basta clicar em `Done setting up the partition` para criar
  a próxima partição. A partição raiz deve ficar desse jeito:
 
-![manual_05.png](manual_05.png)
+![manual_05.png](./imagens/manual_05.png)
 
-![manual_06.png](manual_06.png)
+![manual_06.png](./imagens/manual_06.png)
 
 Para criar a partição SWAP basta clicar na última partição livre e fazer
  os mesmos passos feitos para setar a raiz, porém em `Use as` escolher
  `swap area`:
 
-![manual_07.png](manual_07.png)
+![manual_07.png](./imagens/manual_07.png)
 
-![manual_08.png](manual_08.png)
+![manual_08.png](./imagens/manual_08.png)
 
 Para confirmar devemos clicar em `Finish partitioning and write changes
  to disk`, mas as modificações ainda não foram feitas. Será mostrado as
  partições que de fato foram modificas, e para confirmar se tudo está
  certo deve-se selecionar `Yes` e depois clicar em `Continue`.
 
-![manual_09.png](manual_09.png)
+![manual_09.png](./imagens/manual_09.png)
 
 Até está tela nenhuma modificação no disco tinha sido feita de verdade,
  porém ao clicar em `Continue` elas serão executadas e não haverá mais
