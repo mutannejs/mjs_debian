@@ -128,7 +128,7 @@ Com o arquivo aberto, devemos substituir todos os lugares (desde que não
  recomendado pelo netselect-apt, em meu caso *`mirror.uepg.br`*, para
  que o arquivo fique dessa forma:
 
-![apt_e_netselect_06.png](./imagens/apt_e_netselec_t06.png)
+![apt_e_netselect_06.png](./imagens/apt_e_netselect_06.png)
 
 Pronto, devemos salvar e sair. Como própria recomendação da ferramenta,
  após editarmos o arquivo deve-se atualizar novamente a lista de pacotes
