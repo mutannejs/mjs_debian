@@ -244,6 +244,9 @@ Alias nada mais é que um apelido para um comando. Para criar seus
  `ls=”ls --color=auto”` definido dentro dele, e outras configurações do
  bash (o shell usado como padrão no terminal).
 
+*Os passos a seguir foram feitos logado como o usuário mutanne, e não o
+ root.*
+
 Para criar um arquivo, deve-se usar o comando `touch`:
 
 ```

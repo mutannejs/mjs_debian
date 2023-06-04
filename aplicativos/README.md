@@ -654,3 +654,34 @@ apt install timeshift
 ![testdisk_e_timeshift_02.png](./imagens/testdisk_e_timeshift_02.png)
 
 O atalho para executá-lo será adicionado no menu na seção `System`.
+
+1. Quando executado será requerido a senha do root.
+
+2. Deve-se escolher utilizar `RSYNC` (como pré-selecionado), tanto que o
+ Debian não vem com suporte a `BTRFS` por padrão, embora possa ser
+ adicionado. RSYNC é um utilitário para gerenciar cópias de disco,
+ enquanto BTRFS é um sistema de arquivos que possui a funcionalidade de
+ criar snapshot’s do sistema.
+
+3. Deve-se selecionar o disco onde deseja-se criar as cópias. A partição
+ deve ser de um tipo padrão do linux, como ext4. Pode-se escolher a
+ partição onde o sistema está instalado, mas é recomendado escolher
+ outra.
+
+4. Será necessário escolher a frequência com que os snapshot’s serão
+ criados, pode-se desselecionar a opção que vêm por padrão, assim, todos
+ os snapshots’s terão que ser criados manualmente.
+
+5. Por padrão, o timeshift não faz cópias da home dos usuários, para
+ copiar essas pastas também, deve-se desmarcar a opção `Exclude All
+ Files`, e selecionar `Include Only Hidden Files` para copiar apenas os
+ arquivos ocultos dessas pastas, ou selecionar `Include All Files` para
+ copiar todos seus arquivos. Caso queira criar cópias de pastas
+ específicas que estão na home de um usuário, e não toda ela, pode-se
+ incluir essa pasta clicando em `Settings` e na aba `Filters`, essa
+ possibilidade aparecerá após clicar em `Next`.
+
+6. Agora basta clicar em `Create` para criar um snapshot, finalizando a
+ cópia pode-se clicar duas vezes na coluna `Comments` para adicionar um
+ comentário para esse snapshot, deixando mais claro o contexto em que
+ ele foi criado.
