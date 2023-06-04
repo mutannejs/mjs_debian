@@ -591,13 +591,16 @@ Temos atualmente três browsers instalados no sistema, o firefox,
 
 - **/usr/bin/x-www-browser**: local onde se encontra o link simbólico.
 
-- **x-www-browser**: nome da alternativa que estamos adicionando.
+- **x-www-browser**: x-www-browser: nome do grupo do link (nesse caso
+ possui o mesmo nome do executável).
 
 - **/usr/local/bin/firefox**: executável da alternativa a ser
  adicionada.
 
-- **90**: prioridade para a alterntiva. Até então a maior prioridade é
- de 80.
+- **90**:  prioridade para a alternativa. Alguns browsers (como o
+ chrome) ao serem instalados, definirão sua prioridade como 200, por
+ tanto o firefox continuará sendo o browser padrão por ter sua
+ prioridade igual a 210.
 
 Para ocultar o firefox-esr no menu de aplicativos, vamos adicionar uma
  linha no final do arquivo que define seu ícone, esse é o arquivo
