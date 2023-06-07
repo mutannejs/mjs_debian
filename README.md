@@ -14,6 +14,8 @@ Esse projeto foi iniciado dia 25 de abril de 2023.
 
 ## Últimas mudanças
 
+Na seção **Aplicativos** foi adicionado **GParted** e Driver **Impressora**;
+
 Na seção **Configuração** foi adicionado o tópico **Touchpad**;
 
 Na seção **Aplicativos** foi adicionado os tópicos **Trash-cli**,
@@ -64,6 +66,8 @@ Mostra os primeiros programas e pacotes instalados.
 
 - [**Tlp**](./aplicativos#tlp) : usado para economizar bateria no notebook;
 
+- [**Driver impressora**](./aplicativos#driver-impressora) : como instalar driver necessário para usar impressora Epson L210;
+
 - [**Transmission**](./aplicativos#transmission) : leve e simples cliente de BitTorrent;
 
 - [**Blueman**](./aplicativos#blueman) : gerenciador de Bluetooth com interface gráfica;
@@ -71,6 +75,8 @@ Mostra os primeiros programas e pacotes instalados.
 - [**Conky**](./aplicativos#conky) : monitor de sistema na área de trabalho;
 
 - [**Trash-cli**](./aplicativos#trash-cli) : usado para manipular a lixeira do sistema pela linha de comando;
+
+- [**GParted**](./aplicativos#gparted) : editor de partições com interface gráfica;
 
 - [**Desenvolvimento**](./aplicativos#desenvolvimento) : ferramentas usadas para programar
 

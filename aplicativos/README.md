@@ -186,6 +186,32 @@ Como pode-se ver após `TLP Status`, ele já está habilitado, caso não
 tlp start
 ```
 
+## Driver impressora
+
+Algumas impressoras possuem driver proprietário, *como é o caso da
+ impressora Epson L210*, igualmente os drivers da placa de rede, esses
+ drivers não veem por padrão junto ao Debian. Para poder usar
+ impressoras como a Epson L210 é necessário instalar o pacote
+ `printer-driver-gutenprint`, uma coleção de drivers livres para várias
+ impressoras que tem drivers proprietários fornecidos pelos vendedores.
+ Uma lista com todas as impressoras suportadas por essa coleção pode ser
+ encontrada em:
+
+[https://gimp-print.sourceforge.net/p_Supported_Printers.php](https://gimp-print.sourceforge.net/p_Supported_Printers.php)
+
+Para instalar o pacote basta usar:
+
+```
+apt install printer-driver-gutenprint
+```
+
+![driver_impressora.png](./imagens/driver_impressora.png)
+
+Agora, da próxima vez que ligar a impressora com ela conectada no
+ computador, ela será configurada automaticamente. Para a impressora
+ Epson L210, é interessante trocar o modelo de cores de `RGB` para
+ `CMYK`.
+
 ## Transmission
 
 Esse é um leve e simples cliente de BitTorrent, usado por mim
@@ -267,6 +293,23 @@ Para usá-lo é muito simples, seus três principais comandos são:
 Esse programa usa a mesma lixeira da interface gráfica, portanto, os
  itens removidos aparecerão tanto em trash-list quanto no gerenciador
  de arquivos.
+
+## GParted
+
+Esse é um aplicativo usado para particionar discos e editar partições, é
+ um programa gráfico e com uma interface fácil de compreender. Para
+ instalá-lo deve-se usar:
+
+```
+apt install gparted
+```
+
+![gparted.png](./imagens/gparted.png)
+
+O ícone de atalho para executá-lo será adicionado na seção System.
+
+Outra opção de editor de partições é o cfdisk, funciona apenas na linha
+ de comando, possui uma interface simples e já vem instalado por padrão.
 
 ## Desenvolvimento
 
@@ -575,7 +618,7 @@ Para mudar o navegador padrão, deveremos usar o comando
  `update-alternatives`:
 
 ```
-update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/local/bin/firefox 90
+update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/local/bin/firefox 210
 ```
 
 Temos atualmente três browsers instalados no sistema, o firefox,
@@ -597,7 +640,7 @@ Temos atualmente três browsers instalados no sistema, o firefox,
 - **/usr/local/bin/firefox**: executável da alternativa a ser
  adicionada.
 
-- **90**:  prioridade para a alternativa. Alguns browsers (como o
+- **210**:  prioridade para a alternativa. Alguns browsers (como o
  chrome) ao serem instalados, definirão sua prioridade como 200, por
  tanto o firefox continuará sendo o browser padrão por ter sua
  prioridade igual a 210.
