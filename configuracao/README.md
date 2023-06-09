@@ -248,7 +248,7 @@ Embora os comandos usados para saber qual o tipo da partição indicarem
 
 Devemos modificar a partição para uso apenas de um usuário, isso é feito
  adicionando o campo `uid=` seguido do **uid** do seu usuário na coluna
- **<options>**, a separação dos campos dessa coluna deve ser feita por
+ **\<options\>**, a separação dos campos dessa coluna deve ser feita por
  meio de uma vírgula. Para saber o **uid** do seu usuário, basta usar o
  comando `id`, sendo normalmente `1000` (número padrão para o primeiro
  usuário adicionado). Embora contraditório com as opções **nouser** e
