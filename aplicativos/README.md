@@ -306,10 +306,11 @@ apt install gparted
 
 ![gparted.png](./imagens/gparted.png)
 
-O ícone de atalho para executá-lo será adicionado na seção System.
+O ícone de atalho para executá-lo será adicionado na seção `System`.
 
-Outra opção de editor de partições é o cfdisk, funciona apenas na linha
- de comando, possui uma interface simples e já vem instalado por padrão.
+Outra opção de editor de partições é o `cfdisk`, funciona apenas na
+ linha de comando, possui uma interface simples e já vem instalado por
+ padrão.
 
 ## Desenvolvimento
 

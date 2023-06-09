@@ -234,6 +234,30 @@ Depois de fazer uma alteração no arquivo fstab é necessário rodar o
 systemctl daemon-reload
 ```
 
+**Dica para partição windows**:
+
+Algumas operações não ocorrerão perfeitamente em partições NTFS, tipo
+ usado pelo Windows. Para solucionar esse problema, algumas alterações
+ na linha do arquivo fstab deverão ser modificadas.
+
+Embora os comandos usados para saber qual o tipo da partição indicarem
+ que ela é do tipo ntfs, na coluna **<type>** deve-se informar
+ `ntfs-3g`. O NTFS é um sistema de arquivos proprietário da Microsoft,
+ sendo ntfs-3g um driver open source para escrita e leitura de partições
+ desse tipo.
+
+Devemos modificar a partição para uso apenas de um usuário, isso é feito
+ adicionando o campo `uid=` seguido do **uid** do seu usuário na coluna
+ **<options>**, a separação dos campos dessa coluna deve ser feita por
+ meio de uma vírgula. Para saber o **uid** do seu usuário, basta usar o
+ comando `id`, sendo normalmente `1000` (número padrão para o primeiro
+ usuário adicionado). Embora contraditório com as opções **nouser** e
+ **dev** presentes em default, esse esquema irá funcionar.
+
+No fim, a linha para o mesmo exemplo de partição ficaria assim:
+
+> UUID=ECA4DE09A4DDD5E4	/media/seguranca	ntfs-3g	defaults,uid=1000	0	0
+
 ## Alias
 
 Alias nada mais é que um apelido para um comando. Para criar seus
