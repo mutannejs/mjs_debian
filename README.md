@@ -14,6 +14,9 @@ Esse projeto foi iniciado dia 25 de abril de 2023.
 
 ## Últimas mudanças
 
+O tópico **Fstab** foi incrementado com dica para funcionamento com
+ partições windows;
+
 Na seção **Aplicativos** foi adicionado **GParted** e Driver **Impressora**;
 
 Na seção **Configuração** foi adicionado o tópico **Touchpad**;
